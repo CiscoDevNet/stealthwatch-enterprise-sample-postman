@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "8e05b637-de54-46b8-b174-fcbd6aa88e76",
+		"_postman_id": "6fff5866-2400-420b-ab5b-39ad633aa229",
 		"name": "Stealthwatch Enterprise - REST (Reporting)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -73,10 +73,6 @@
 						"value": ""
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://{{STEALTHWATCH-SMC}}/sw-reporting/v1/tenants",
 					"protocol": "https",
@@ -148,7 +144,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"startDateTime\": \"{{start-timestamp}}\",\n    \"endDateTime\": \"{{end-timestamp}}\",\n    \"recordLimit\": 500,\n    \"subject\": {\n        \"ipAddresses\": {\n            \"includes\": [\"175.23.26.39\"],\n            \"excludes\": []\n        },\n        \"hostGroups\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"username\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"macAddress\": {\n            \"includes\": [],\n            \"excludes\": []\n        }\n    },\n    \"peer\": {\n        \"ipAddresses\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"hostGroups\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"username\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"macAddress\": {\n            \"includes\": [],\n            \"excludes\": []\n        }\n    },\n    \"flow\": {\n        \"tcpUdpPorts\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"applications\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"flowDirection\": \"BOTH\",\n        \"byteCount\": [],\n        \"packetCount\": [],\n        \"payload\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"flowDataSource\": [],\n        \"protocol\": [],\n        \"includeInterfaceData\": false\n    }\n}"
+					"raw": "{\n    \"startDateTime\": \"{{start-timestamp}}\",\n    \"endDateTime\": \"{{end-timestamp}}\",\n    \"recordLimit\": 500,\n    \"subject\": {\n        \"ipAddresses\": {\n            \"includes\": [\"10.201.3.154\"],\n            \"excludes\": []\n        },\n        \"hostGroups\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"username\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"macAddress\": {\n            \"includes\": [],\n            \"excludes\": []\n        }\n    },\n    \"peer\": {\n        \"ipAddresses\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"hostGroups\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"username\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"macAddress\": {\n            \"includes\": [],\n            \"excludes\": []\n        }\n    },\n    \"flow\": {\n        \"tcpUdpPorts\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"applications\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"flowDirection\": \"BOTH\",\n        \"byteCount\": [],\n        \"packetCount\": [],\n        \"payload\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"flowDataSource\": [],\n        \"protocol\": [],\n        \"includeInterfaceData\": false\n    }\n}"
 				},
 				"url": {
 					"raw": "https://{{STEALTHWATCH-SMC}}/sw-reporting/v2/tenants/:tenant-id/flows/queries",
@@ -167,7 +163,7 @@
 					"variable": [
 						{
 							"key": "tenant-id",
-							"value": "123"
+							"value": "{{tenant-id}}"
 						}
 					]
 				}
@@ -196,10 +192,6 @@
 						"value": ""
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://{{STEALTHWATCH-SMC}}/sw-reporting/v2/tenants/:tenant-id/flows/queries/:query-id",
 					"protocol": "https",
@@ -218,7 +210,7 @@
 					"variable": [
 						{
 							"key": "tenant-id",
-							"value": "123"
+							"value": "{{tenant-id}}"
 						},
 						{
 							"key": "query-id",
@@ -251,10 +243,6 @@
 						"value": ""
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://{{STEALTHWATCH-SMC}}/sw-reporting/v2/tenants/:tenant-id/flows/queries/:query-id/results",
 					"protocol": "https",
@@ -274,7 +262,7 @@
 					"variable": [
 						{
 							"key": "tenant-id",
-							"value": "123"
+							"value": "{{tenant-id}}"
 						},
 						{
 							"key": "query-id",
@@ -341,7 +329,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"timeRange\": {\n        \"from\": \"{{start-timestamp}}\",\n        \"to\": \"{{end-timestamp}}\"\n    },\n    \"hosts\": [\n    \t{\n\t\t\t\"ipAddress\": \"175.23.26.39\",\n\t\t\t\"type\": \"source\"\n\t\t}\n\t],\n    \"securityEventTypeIds\": []\n}"
+					"raw": "{\n    \"timeRange\": {\n        \"from\": \"{{start-timestamp}}\",\n        \"to\": \"{{end-timestamp}}\"\n    },\n    \"hosts\": [\n    \t{\n\t\t\t\"ipAddress\": \"10.201.3.154\",\n\t\t\t\"type\": \"source\"\n\t\t}\n\t],\n    \"securityEventTypeIds\": []\n}"
 				},
 				"url": {
 					"raw": "https://{{STEALTHWATCH-SMC}}/sw-reporting/v1/tenants/:tenant-id/security-events/queries",
@@ -360,7 +348,7 @@
 					"variable": [
 						{
 							"key": "tenant-id",
-							"value": "123"
+							"value": "{{tenant-id}}"
 						}
 					]
 				}
@@ -389,10 +377,6 @@
 						"value": ""
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://{{STEALTHWATCH-SMC}}/sw-reporting/v1/tenants/:tenant-id/security-events/queries/:query-id",
 					"protocol": "https",
@@ -411,7 +395,7 @@
 					"variable": [
 						{
 							"key": "tenant-id",
-							"value": "123"
+							"value": "{{tenant-id}}"
 						},
 						{
 							"key": "query-id",
@@ -444,10 +428,6 @@
 						"value": ""
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://{{STEALTHWATCH-SMC}}/sw-reporting/v1/tenants/:tenant-id/security-events/results/:query-id",
 					"protocol": "https",
@@ -466,7 +446,7 @@
 					"variable": [
 						{
 							"key": "tenant-id",
-							"value": "123"
+							"value": "{{tenant-id}}"
 						},
 						{
 							"key": "query-id",
@@ -533,7 +513,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"startTime\": \"{{start-timestamp}}\",\n    \"endTime\": \"{{end-timestamp}}\",\n    \"connection\": {\n        \"applications\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"direction\": \"INBOUND_PLUS_OUTBOUND\",\n        \"portProtocols\": {\n            \"includes\": [],\n            \"excludes\": []\n        }\n    },\n    \"subject\": {\n        \"tags\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"ipAddresses\": {\n            \"includes\": [\n                \"175.23.26.39\"\n            ],\n            \"excludes\": []\n        }\n    },\n    \"peer\": {\n        \"tags\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"ipAddresses\": {\n            \"includes\": [],\n            \"excludes\": []\n        }\n    },\n    \"orientation\": \"EITHER\",\n    \"maxRows\": 50,\n    \"flowCollectors\": [],\n    \"orderBy\": \"TOTAL_BYTES\",\n    \"excludeBpsPps\": true,\n    \"excludeOthers\": true,\n    \"excludeCounts\": false,\n    \"standardOptions\": true\n}"
+					"raw": "{\n    \"startTime\": \"{{start-timestamp}}\",\n    \"endTime\": \"{{end-timestamp}}\",\n    \"connection\": {\n        \"applications\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"direction\": \"INBOUND_PLUS_OUTBOUND\",\n        \"portProtocols\": {\n            \"includes\": [],\n            \"excludes\": []\n        }\n    },\n    \"subject\": {\n        \"tags\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"ipAddresses\": {\n            \"includes\": [\n                \"10.201.3.154\"\n            ],\n            \"excludes\": []\n        }\n    },\n    \"peer\": {\n        \"tags\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"ipAddresses\": {\n            \"includes\": [],\n            \"excludes\": []\n        }\n    },\n    \"orientation\": \"EITHER\",\n    \"maxRows\": 50,\n    \"flowCollectors\": [],\n    \"orderBy\": \"TOTAL_BYTES\",\n    \"excludeBpsPps\": true,\n    \"excludeOthers\": true,\n    \"excludeCounts\": false,\n    \"standardOptions\": true\n}"
 				},
 				"url": {
 					"raw": "https://{{STEALTHWATCH-SMC}}/sw-reporting/v1/tenants/:tenant-id/flow-reports/top-conversations/queries",
@@ -553,7 +533,7 @@
 					"variable": [
 						{
 							"key": "tenant-id",
-							"value": "123"
+							"value": "{{tenant-id}}"
 						}
 					]
 				}
@@ -582,10 +562,6 @@
 						"value": ""
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://{{STEALTHWATCH-SMC}}/sw-reporting/v1/tenants/:tenant-id/flow-reports/top-conversations/queries/:query-id",
 					"protocol": "https",
@@ -605,7 +581,7 @@
 					"variable": [
 						{
 							"key": "tenant-id",
-							"value": "123"
+							"value": "{{tenant-id}}"
 						},
 						{
 							"key": "query-id",
@@ -638,10 +614,6 @@
 						"value": ""
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://{{STEALTHWATCH-SMC}}/sw-reporting/v1/tenants/:tenant-id/flow-reports/top-conversations/results/:query-id",
 					"protocol": "https",
@@ -661,7 +633,7 @@
 					"variable": [
 						{
 							"key": "tenant-id",
-							"value": "123"
+							"value": "{{tenant-id}}"
 						},
 						{
 							"key": "query-id",
@@ -728,7 +700,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"startTime\": \"{{start-timestamp}}\",\n    \"endTime\": \"{{end-timestamp}}\",\n    \"connection\": {\n        \"applications\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"direction\": \"INBOUND_PLUS_OUTBOUND\",\n        \"portProtocols\": {\n            \"includes\": [],\n            \"excludes\": []\n        }\n    },\n    \"subject\": {\n        \"tags\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"ipAddresses\": {\n            \"includes\": [\n                \"175.23.26.39\"\n            ],\n            \"excludes\": []\n        }\n    },\n    \"peer\": {\n        \"tags\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"ipAddresses\": {\n            \"includes\": [],\n            \"excludes\": []\n        }\n    },\n    \"orientation\": \"EITHER\",\n    \"maxRows\": 50,\n    \"flowCollectors\": [],\n    \"orderBy\": \"TOTAL_BYTES\",\n    \"excludeBpsPps\": true,\n    \"excludeOthers\": true,\n    \"excludeCounts\": false,\n    \"standardOptions\": true\n}"
+					"raw": "{\n    \"startTime\": \"{{start-timestamp}}\",\n    \"endTime\": \"{{end-timestamp}}\",\n    \"connection\": {\n        \"applications\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"direction\": \"INBOUND_PLUS_OUTBOUND\",\n        \"portProtocols\": {\n            \"includes\": [],\n            \"excludes\": []\n        }\n    },\n    \"subject\": {\n        \"tags\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"ipAddresses\": {\n            \"includes\": [\n                \"10.201.3.154\"\n            ],\n            \"excludes\": []\n        }\n    },\n    \"peer\": {\n        \"tags\": {\n            \"includes\": [],\n            \"excludes\": []\n        },\n        \"ipAddresses\": {\n            \"includes\": [],\n            \"excludes\": []\n        }\n    },\n    \"orientation\": \"EITHER\",\n    \"maxRows\": 50,\n    \"flowCollectors\": [],\n    \"orderBy\": \"TOTAL_BYTES\",\n    \"excludeBpsPps\": true,\n    \"excludeOthers\": true,\n    \"excludeCounts\": false,\n    \"standardOptions\": true\n}"
 				},
 				"url": {
 					"raw": "https://{{STEALTHWATCH-SMC}}/sw-reporting/v1/tenants/:tenant-id/flow-reports/top-ports/queries",
@@ -748,7 +720,7 @@
 					"variable": [
 						{
 							"key": "tenant-id",
-							"value": "123"
+							"value": "{{tenant-id}}"
 						}
 					]
 				}
@@ -777,10 +749,6 @@
 						"value": ""
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://{{STEALTHWATCH-SMC}}/sw-reporting/v1/tenants/:tenant-id/flow-reports/top-ports/queries/:query-id",
 					"protocol": "https",
@@ -800,7 +768,7 @@
 					"variable": [
 						{
 							"key": "tenant-id",
-							"value": "123"
+							"value": "{{tenant-id}}"
 						},
 						{
 							"key": "query-id",
@@ -833,10 +801,6 @@
 						"value": ""
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://{{STEALTHWATCH-SMC}}/sw-reporting/v1/tenants/:tenant-id/flow-reports/top-ports/results/:query-id",
 					"protocol": "https",
@@ -856,11 +820,39 @@
 					"variable": [
 						{
 							"key": "tenant-id",
-							"value": "123"
+							"value": "{{tenant-id}}"
 						},
 						{
 							"key": "query-id",
 							"value": "{{query-id}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Cognitive Intelligence Incidents",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://{{STEALTHWATCH-SMC}}/sw-reporting/v2/tenants/:tenant-id/incidents",
+					"protocol": "https",
+					"host": [
+						"{{STEALTHWATCH-SMC}}"
+					],
+					"path": [
+						"sw-reporting",
+						"v2",
+						"tenants",
+						":tenant-id",
+						"incidents"
+					],
+					"variable": [
+						{
+							"key": "tenant-id",
+							"value": "0"
 						}
 					]
 				}
@@ -921,5 +913,6 @@
 				]
 			}
 		}
-	]
+	],
+	"protocolProfileBehavior": {}
 }

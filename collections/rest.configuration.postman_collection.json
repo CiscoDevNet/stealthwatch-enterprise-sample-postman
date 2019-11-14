@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "9623ce17-c97b-4564-8f9c-be8bb07100e6",
+		"_postman_id": "785f554a-5c7d-4aa9-a394-39bf713735d0",
 		"name": "Stealthwatch Enterprise - REST (Configuration Mgmt.)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -73,10 +73,6 @@
 						"value": ""
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://{{STEALTHWATCH-SMC}}/sw-reporting/v1/tenants",
 					"protocol": "https",
@@ -114,10 +110,6 @@
 						"value": ""
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://{{STEALTHWATCH-SMC}}/smc-configuration/rest/v1/tenants/:tenant-id/tags/",
 					"protocol": "https",
@@ -136,7 +128,7 @@
 					"variable": [
 						{
 							"key": "tenant-id",
-							"value": "123"
+							"value": "{{tenant-id}}"
 						}
 					]
 				}
@@ -194,7 +186,7 @@
 					"variable": [
 						{
 							"key": "tenant-id",
-							"value": "123"
+							"value": "{{tenant-id}}"
 						}
 					]
 				}
@@ -223,10 +215,6 @@
 						"value": ""
 					}
 				],
-				"body": {
-					"mode": "raw",
-					"raw": ""
-				},
 				"url": {
 					"raw": "https://{{STEALTHWATCH-SMC}}/smc-configuration/rest/v1/tenants/:tenant-id/tags/:tag-id",
 					"protocol": "https",
@@ -245,7 +233,7 @@
 					"variable": [
 						{
 							"key": "tenant-id",
-							"value": "123"
+							"value": "{{tenant-id}}"
 						},
 						{
 							"key": "tag-id",
@@ -286,7 +274,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"id\": {{tag-id}},\n    \"name\": \"Sample Threat Feed\",\n    \"location\": \"OUTSIDE\",\n    \"ranges\": [\n        \"149.202.170.60\",\n        \"23.129.64.101\",\n        \"37.187.129.166\",\n        \"91.146.121.3\",\n        \"91.146.121.3\",\n        \"{{malicious-ip}}\"\n    ],\n    \"description\": \"A sample of a threat feed\",\n    \"hostBaselines\": false,\n    \"suppressExcludedServices\": true,\n    \"inverseSuppression\": false,\n    \"hostTrap\": false,\n    \"sendToCta\": false,\n    \"domainId\": {{tenant-id}},\n    \"parentId\": 0\n}"
+					"raw": "{\n    \"id\": {{tag-id}},\n    \"name\": \"Sample Threat Feed\",\n    \"location\": \"OUTSIDE\",\n    \"ranges\": [\n        \"149.202.170.60\",\n        \"23.129.64.101\",\n        \"37.187.129.166\",\n        \"91.146.121.3\",\n        \"216.83.162.230\"\n    ],\n    \"description\": \"A sample of a threat feed\",\n    \"hostBaselines\": false,\n    \"suppressExcludedServices\": true,\n    \"inverseSuppression\": false,\n    \"hostTrap\": false,\n    \"sendToCta\": false,\n    \"domainId\": {{tenant-id}},\n    \"parentId\": 0\n}"
 				},
 				"url": {
 					"raw": "https://{{STEALTHWATCH-SMC}}/smc-configuration/rest/v1/tenants/:tenant-id/tags/:tag-id",
@@ -306,7 +294,7 @@
 					"variable": [
 						{
 							"key": "tenant-id",
-							"value": "123"
+							"value": "{{tenant-id}}"
 						},
 						{
 							"key": "tag-id",
@@ -361,7 +349,7 @@
 					"variable": [
 						{
 							"key": "tenant-id",
-							"value": "123"
+							"value": "{{tenant-id}}"
 						},
 						{
 							"key": "tag-id",
@@ -426,5 +414,6 @@
 				]
 			}
 		}
-	]
+	],
+	"protocolProfileBehavior": {}
 }

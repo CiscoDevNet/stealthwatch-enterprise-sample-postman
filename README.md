@@ -7,12 +7,14 @@ The minimum supported version of Stealthwatch Enterprise that is required to use
    * v6.5.0 (Host Snapshot)
    * v6.10.0 (Domains / Tenants, Top Reports, Security Events)
    * v7.0.0 (Flows, Host Groups / Tags)
+   * v7.1.0 (Cognitive Intelligence Incidents)
 
 ## Installation
 1. Ensure Postman is installed.
    * To download and install Postman, please visit https://www.getpostman.com.
 2. Download the Postman [collections](./collections) and [environment](./environment) files.
 3. After launching Postman, click the `import` button and import the previously downloaded Postman files.
+4. Under the Settings/Preferences menu for Postman, ensure that "SSL certificate verification" is turned off. 
 
 ## Configuration
 1. Ensure the Postman collections and environment have been imported.
@@ -22,6 +24,16 @@ The minimum supported version of Stealthwatch Enterprise that is required to use
     * `STEALTHWATCH-SMC`
     * `username`
     * `password`
+
+#### **Cognitive Intelligence Incidents API Configuration**
+The Cognitive Intelligence Incidents REST API is disabled by default. To enable the API:
+
+* Enable Cognitive Analytics in External Services on your SMC and Flow Collector(s).
+* Locate `/lancope/tomcat/webapps/cta-events-collector/WEB-INF/classes/app.properties` file on your SMC system
+* Under `#CTA_ENABLED` section set the `cta.api.enabled` option to `true`
+* Restart web server on your SMC system: `systemctl restart lc-tomcat`
+
+*(Note: The API returns CTA incidents for all domains and expects tenantId to be 0 in the API path parameter. Requesting data for any specific tenant will result in error.)*
 
 ## Usage
 1. From the Collections list on the left side of Postman, select the desired collection as well as the desired request to run.
