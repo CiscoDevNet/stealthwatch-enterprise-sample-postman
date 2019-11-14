@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "785f554a-5c7d-4aa9-a394-39bf713735d0",
-		"name": "Stealthwatch Enterprise - REST (Configuration Mgmt.)",
+		"name": "Stealthwatch Enterprise - Configuration Mgmt. REST API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [

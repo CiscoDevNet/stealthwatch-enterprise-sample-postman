@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "da451553-6640-4ba3-baf9-e93a8bad7fde",
-		"name": "Stealthwatch Enterprise - SOAP",
+		"name": "Stealthwatch Enterprise - SOAP API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [

@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "6fff5866-2400-420b-ab5b-39ad633aa229",
-		"name": "Stealthwatch Enterprise - REST (Reporting)",
+		"name": "Stealthwatch Enterprise - Reporting REST API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
