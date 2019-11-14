@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "Authenticate",
+			"name": "Login",
 			"request": {
 				"method": "POST",
 				"header": [
