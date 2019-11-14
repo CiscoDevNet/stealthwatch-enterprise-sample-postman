@@ -24,6 +24,7 @@ The minimum supported version of Stealthwatch Enterprise that is required to use
     * `STEALTHWATCH-SMC`
     * `username`
     * `password`
+    * `tenant-id` (optional)
 
 #### **Cognitive Intelligence Incidents API Configuration**
 The Cognitive Intelligence Incidents REST API is disabled by default. To enable the API:
