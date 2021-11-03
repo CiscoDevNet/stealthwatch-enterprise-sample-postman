@@ -1,9 +1,9 @@
-# Stealthwatch Enterprise API Postman Samples
-This repository contains sample Postman collections related to Cisco Stealthwatch Enterprise APIs. It is available for use by the Cisco DevNet community through Code Exchange.
-For more information on the Stealthwatch Enterprise REST API, please see the following link: https://developer.cisco.com/docs/stealthwatch/enterprise
+# Secure Network Analytics API Postman Samples
+This repository contains sample Postman collections related to Cisco Secure Network Analytics (formerly Stealthwatch) APIs. It is available for use by the Cisco DevNet community through Code Exchange.
+For more information on the Secure Network Analytics REST API, please see the following link: https://developer.cisco.com/docs/stealthwatch/enterprise
 
 ## Compatibility
-The minimum supported version of Stealthwatch Enterprise that is required to use each respective API capability:
+The minimum supported version of Secure Network Analytics (formerly Stealthwatch) that is required to use each respective API capability:
    * v6.5.0 (Host Snapshot)
    * v6.10.0 (Domains / Tenants, Top Reports, Security Events)
    * v7.0.0 (Flows, Host Groups / Tags)
@@ -29,7 +29,7 @@ The minimum supported version of Stealthwatch Enterprise that is required to use
 #### **Cognitive Intelligence Incidents API Configuration**
 The Cognitive Intelligence Incidents REST API is disabled by default. To enable the API:
 
-* Enable Cognitive Analytics in External Services on your SMC and Flow Collector(s).
+* Enable Cognitive Analytics in External Services on your Manager (formerly Stealthwatch Management Console or SMC) and Flow Collector(s).
 * Locate `/lancope/tomcat/webapps/cta-events-collector/WEB-INF/classes/app.properties` file on your SMC system
 * Under `#CTA_ENABLED` section set the `cta.api.enabled` option to `true`
 * Restart web server on your SMC system: `systemctl restart lc-tomcat`
