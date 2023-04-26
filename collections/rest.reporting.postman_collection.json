@@ -1,12 +1,27 @@
 {
 	"info": {
-		"_postman_id": "6fff5866-2400-420b-ab5b-39ad633aa229",
+		"_postman_id": "8f8d57f0-8b92-4b8c-83ff-f0d4c853b452",
 		"name": "Stealthwatch Enterprise - Reporting REST API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.environment.set(\"xsrf-token\", decodeURIComponent(pm.cookies.get(\"XSRF-TOKEN\")));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [
@@ -56,10 +71,18 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "e4c4b536-c9c3-4d27-a6bb-38b42bee3ae3",
 						"exec": [
-							"var jsonData = JSON.parse(responseBody);",
-							"postman.setEnvironmentVariable(\"tenant-id\", jsonData.data[0].id);"
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Tenant-id is returned\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.data.length).to.be.above(0);",
+							"    // set tenant-id to first value returned from tenants service",
+							"    console.log(\"Setting 'tenant-id' to '\" + jsonData.data[0].id + \"'\");",
+							"    pm.environment.set(\"tenant-id\", jsonData.data[0].id);",
+							"});"
 						],
 						"type": "text/javascript"
 					}
@@ -94,7 +117,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b12b7c80-d1af-47e8-be02-2ddc0cc25807",
 						"exec": [
 							"var jsonData = JSON.parse(responseBody);",
 							"postman.setEnvironmentVariable(\"query-id\", jsonData.data.query.id);"
@@ -105,7 +127,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "6545a4c5-8bdc-4454-b69d-00ed8d925f9f",
 						"exec": [
 							"var hoursBack = 24;",
 							"",
@@ -140,6 +161,11 @@
 						"key": "Accept",
 						"value": "application/json",
 						"type": "text"
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "{{xsrf-token}}",
+						"type": "default"
 					}
 				],
 				"body": {
@@ -176,7 +202,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b12b7c80-d1af-47e8-be02-2ddc0cc25807",
 						"exec": [
 							""
 						],
@@ -227,7 +252,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b12b7c80-d1af-47e8-be02-2ddc0cc25807",
 						"exec": [
 							""
 						],
@@ -279,7 +303,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b12b7c80-d1af-47e8-be02-2ddc0cc25807",
 						"exec": [
 							"var jsonData = JSON.parse(responseBody);",
 							"postman.setEnvironmentVariable(\"query-id\", jsonData.data.searchJob.id);"
@@ -290,7 +313,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "6545a4c5-8bdc-4454-b69d-00ed8d925f9f",
 						"exec": [
 							"var hoursBack = 24;",
 							"",
@@ -325,6 +347,11 @@
 						"key": "Accept",
 						"type": "text",
 						"value": "application/json"
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "{{xsrf-token}}",
+						"type": "default"
 					}
 				],
 				"body": {
@@ -361,7 +388,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b12b7c80-d1af-47e8-be02-2ddc0cc25807",
 						"exec": [
 							""
 						],
@@ -412,7 +438,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b12b7c80-d1af-47e8-be02-2ddc0cc25807",
 						"exec": [
 							""
 						],
@@ -463,7 +488,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b12b7c80-d1af-47e8-be02-2ddc0cc25807",
 						"exec": [
 							"var jsonData = JSON.parse(responseBody);",
 							"postman.setEnvironmentVariable(\"query-id\", jsonData.data.queryId);"
@@ -474,7 +498,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "6545a4c5-8bdc-4454-b69d-00ed8d925f9f",
 						"exec": [
 							"var hoursBack = 24;",
 							"",
@@ -509,6 +532,11 @@
 						"key": "Accept",
 						"type": "text",
 						"value": "application/json"
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "{{xsrf-token}}",
+						"type": "default"
 					}
 				],
 				"body": {
@@ -546,7 +574,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b12b7c80-d1af-47e8-be02-2ddc0cc25807",
 						"exec": [
 							""
 						],
@@ -598,7 +625,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b12b7c80-d1af-47e8-be02-2ddc0cc25807",
 						"exec": [
 							""
 						],
@@ -650,7 +676,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b12b7c80-d1af-47e8-be02-2ddc0cc25807",
 						"exec": [
 							"var jsonData = JSON.parse(responseBody);",
 							"postman.setEnvironmentVariable(\"query-id\", jsonData.data.queryId);"
@@ -661,7 +686,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "6545a4c5-8bdc-4454-b69d-00ed8d925f9f",
 						"exec": [
 							"var hoursBack = 24;",
 							"",
@@ -696,6 +720,11 @@
 						"key": "Accept",
 						"type": "text",
 						"value": "application/json"
+					},
+					{
+						"key": "X-XSRF-TOKEN",
+						"value": "{{xsrf-token}}",
+						"type": "default"
 					}
 				],
 				"body": {
@@ -733,7 +762,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b12b7c80-d1af-47e8-be02-2ddc0cc25807",
 						"exec": [
 							""
 						],
@@ -785,7 +813,6 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b12b7c80-d1af-47e8-be02-2ddc0cc25807",
 						"exec": [
 							""
 						],
@@ -896,7 +923,6 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "86024b4f-5fe0-4e9d-9b86-003c8b68fae9",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -906,13 +932,11 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "80e277b2-106f-445c-9427-8812c82c53f4",
 				"type": "text/javascript",
 				"exec": [
 					""
 				]
 			}
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }
